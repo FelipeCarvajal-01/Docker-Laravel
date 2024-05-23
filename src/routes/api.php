@@ -20,9 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 // Obtener todos los productos
 Route::get('productos',[ProductoApiController::class, 'index'])->middleware('auth:api');
-// Optener un producto por id
+// Obtener un producto por id
 Route::get('productos/{id}',[ProductoApiController::class, 'show']);
 // Crear un nuevo Producto
 Route::post('productos',[ProductoApiController::class, 'store']);
@@ -35,7 +36,7 @@ Route::delete('productos/{id}',[ProductoApiController::class, 'destroy']);
 
 // Obtener todos los productos
 Route::get('tareas',[TareaController::class, 'index']);
-// Optener un producto por id
+// Obtener un producto por id
 Route::get('tareas/{id}',[TareaController::class, 'show']);
 // Crear un nuevo Producto
 Route::post('tareas',[TareaController::class, 'store']);
